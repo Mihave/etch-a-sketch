@@ -26,10 +26,8 @@ ul {
 .smalldiv {
     display: flex;
     flex: 1;
-    border: 1px solid black;
     flex-direction: column;
 }
 
 .smallerdiv {
-    border-top: 2px solid black;
 }
