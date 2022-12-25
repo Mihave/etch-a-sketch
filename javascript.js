@@ -1,3 +1,6 @@
+const parentdiv = document.querySelector('.divcontainer');
+parentdiv.style.width = parentdiv.offsetHeight + 'px';
+
 function drawGrid() {
     num = prompt('Enter the number of rows and collumns');
     input = document.querySelector('.input');
@@ -28,7 +31,9 @@ function turnBlack() {
     elements = document.querySelectorAll('.smallerdiv');
     elements.forEach((element) => {
         element.addEventListener('mouseenter', () => {
-            element.style.background = 'black';
+            if (isMouseDown == true) {
+                element.style.background = 'black';
+            }
         })
     });
 }
@@ -37,7 +42,9 @@ function turnWhite() {
     elements = document.querySelectorAll('.smallerdiv');
     elements.forEach((element) => {
         element.addEventListener('mouseenter', () => {
-            element.style.background = 'white';
+            if (isMouseDown == true) {
+                element.style.background = 'white';
+            }
         })
     });
 }
@@ -57,10 +64,20 @@ function turnRainbow() {
     elements = document.querySelectorAll('.smallerdiv');
     elements.forEach((element) => {
         element.addEventListener('mouseenter', () => {
-            element.style.background = `rgb(${randomNumber(1, 256)}, ${randomNumber(1, 256)}, ${randomNumber(1, 256)})`;
+            if (isMouseDown == true) {
+                element.style.background = `rgb(${randomNumber(1, 256)}, ${randomNumber(1, 256)}, ${randomNumber(1, 256)})`;
+            }
         })
     });
 }
+
+document.addEventListener('mousedown', function() {
+    isMouseDown = true;
+  });
+  
+  document.addEventListener('mouseup', function() {
+    isMouseDown = false;
+  });
 
 blackbtn = document.querySelector('.black');
 blackbtn.addEventListener('click', turnBlack);

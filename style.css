@@ -17,7 +17,6 @@ ul {
 
 .divcontainer {
     border: solid 5px black;
-    width: 70%;
     height: 70%;
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +26,4 @@ ul {
     display: flex;
     flex: 1;
     flex-direction: column;
-}
-
-.smallerdiv {
 }
